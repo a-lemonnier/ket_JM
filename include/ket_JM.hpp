@@ -16,18 +16,28 @@ public:
     _ket_JM(double long, double long);
     _ket_JM(_frac<>, _frac<>);
     
-    //
     // |JM> = a1 |m11 m21 >+a2 | m12 m22 >+...
-    //
     std::vector<std::tuple<_frac<>, _frac<>, _frac<> >> JM;
+    
+    std::vector<std::tuple<_frac<>, _frac<> >> ket_list;
     
     _frac<> j1;
     _frac<> j2;
 
     _ket_JM& operator= ( const _ket_JM &ket );
-    
     _ket_JM& operator* ( const _ket_JM &ket ); // Moment composition
+    
+    void compute_ket_list();
+    void compute_JM();
+    
+    void show_ket_list(void);
+    void show_JM(void);
+    
+    
+    
 
 };
 
 #endif // KET_JM_HPP
+
+

@@ -25,10 +25,16 @@ public:
     _frac& operator* ( const _frac &frac );
     _frac& operator^ ( _T2 n );
     _frac& operator/ ( const _frac&frac );
+   
+    _frac& operator++ ( int );
+    _frac& operator-- ( int );
     
     _frac& operator+= ( const _frac &frac );
     _frac& operator-= ( const _frac &frac );
     _frac& operator*= ( const _frac &frac );
+    
+    bool operator< ( const _frac &frac );
+    bool operator> ( const _frac &frac );
     
     bool operator== ( const _frac &frac );
     bool operator!= ( const _frac &frac );
