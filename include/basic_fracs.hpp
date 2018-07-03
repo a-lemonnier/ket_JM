@@ -18,6 +18,8 @@ public:
     void show(void);
     void simplify(void);
     
+    _frac& abs(const _frac &frac);
+    
     _frac& operator= ( const _frac &frac );
     
     _frac& operator+ ( const _frac &frac );

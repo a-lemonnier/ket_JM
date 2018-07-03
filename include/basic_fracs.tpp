@@ -205,3 +205,11 @@ _T _frac<_T, _T1, _T2>::gcd(_T1 a, _T2 b) {
   }
   return b;
 }
+
+template<class _T, class _T1, class _T2>
+_frac<_T, _T1, _T2> & _frac<_T, _T1, _T2>::abs(const _frac &frac) {
+    _frac* res=new _frac();
+    res->F[0]=abs(res->F[0]);
+    res->F[1]=abs(res->F[1]);
+    return *res;
+}
