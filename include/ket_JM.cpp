@@ -60,7 +60,10 @@ _ket_JM& _ket_JM::operator= ( const _ket_JM &ket_JM ) {
 // **********
 
 void _ket_JM::compute_ket_list() {
-    
+    for(_frac<> j=j1-j2;j<this->j1+this->j2;j++) {  // !!!! code abs  frac
+        j.show();
+        std::cout << "\n";
+    }
 
     
 }
