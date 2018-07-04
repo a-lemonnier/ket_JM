@@ -178,12 +178,12 @@ void _frac<_T, _T1, _T2>::show() {
     if  (this->F[1]!=1 &&  this->F[1]!=0) 
         std::cout << std::setprecision(prec) 
                     << static_cast<_T>(this->F[0]) 
-                    << "/" << static_cast<_T>(this->F[1]) 
-                    << " ~ " 
-                    << static_cast<_T>(this->F[0]/this->F[1]) ;
-    if  (this->F[1]==1) 
+                    << "/" << static_cast<_T>(this->F[1]) ;
+                  //  << " ~ " 
+                  //  << static_cast<_T>(this->F[0]/this->F[1]) ;
+    if  (this->F[1]==1 ) 
         std::cout << std::setprecision(prec) 
-                    << static_cast<_T>(this->F[0]);
+                    << static_cast<int>(this->F[0]);
     if  (this->F[1]==0) std::cerr << "/0!\n";
 }
 
@@ -192,6 +192,12 @@ void _frac<_T, _T1, _T2>::simplify() {
     _T d=gcd(this->F[0],this->F[1]);
     this->F[0]/=d;
     this->F[1]/=d;
+
+    if (this->F[1]<0) {
+	    this->F[0]=-this->F[0];
+	    this->F[1]=-this->F[1];
+    }
+
     this->simplified=true;
 }
 
@@ -207,9 +213,8 @@ _T _frac<_T, _T1, _T2>::gcd(_T1 a, _T2 b) {
 }
 
 template<class _T, class _T1, class _T2>
-_frac<_T, _T1, _T2> & _frac<_T, _T1, _T2>::abs(const _frac &frac) {
-    _frac* res=new _frac();
-    res->F[0]=abs(res->F[0]);
-    res->F[1]=abs(res->F[1]);
-    return *res;
+_frac<_T, _T1, _T2> & _frac<_T, _T1, _T2>::abs() {
+    this->F[0]=fabs(this->F[0]);
+    this->F[1]=fabs(this->F[1]);
+    return *this;
 }

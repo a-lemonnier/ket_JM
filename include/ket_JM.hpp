@@ -20,6 +20,7 @@ public:
     std::vector<std::tuple<_frac<>, _frac<>, _frac<> >> JM;
     
     std::vector<std::tuple<_frac<>, _frac<> >> ket_list;
+    std::vector<_frac<> > J_list;
     
     _frac<> j1;
     _frac<> j2;
@@ -32,6 +33,7 @@ public:
     
     void show_ket_list(void);
     void show_JM(void);
+    void show_J_list();
     
     
     
