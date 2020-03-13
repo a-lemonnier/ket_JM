@@ -7,7 +7,6 @@ platform:
 
 steps:
 - name: Build and Test
-  image: ubuntu:18.04
 commands:
   - apt-get update -y
   - apt-get install -y make gcc g++ cmake perl boost 
