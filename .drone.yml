@@ -7,8 +7,6 @@ platform:
 
 steps:
 - name: Build and Test
-  image: ubuntu:18.04
+image: ubuntu:18.04
 commands:
-  - cmake .
-  - make
-  - ./ket_jm 1 3/2
+  - zizi
