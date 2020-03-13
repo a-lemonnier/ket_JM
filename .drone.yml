@@ -9,4 +9,4 @@ steps:
 - name: Build and Test
 image: ubuntu:18.04
 commands:
-  - zizi
+  - sudo apt-get update
